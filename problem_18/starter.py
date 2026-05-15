@@ -25,3 +25,21 @@ for line in data[:5]:
 print()
 
 # --- Your code here ---
+
+
+
+from collections import defaultdict
+
+totals = defaultdict(int)
+
+for line in data:
+    parts = line.split()
+    quantity = int(parts[1])
+    category = parts[2]
+    totals[category] += quantity
+
+print("Category totals:")
+for cat, total in totals.items():
+    print(f" {cat}: {total} (mod 100 = {total % 100})")
+
+print = 1
